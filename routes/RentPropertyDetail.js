@@ -1,5 +1,5 @@
 const router = require("express").Router();
-let RentPropertyDB = require("../models/RentPropertyDetail.models");
+let RentPropertyDB = require("../models/RentPropertyDetail.js");
 
 router.route("/").get((req, res) => {
   RentPropertyDB.find()

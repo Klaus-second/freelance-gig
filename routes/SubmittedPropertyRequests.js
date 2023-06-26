@@ -2,7 +2,7 @@ let mongoose = require("mongoose"),
   express = require("express"),
   router = express.Router();
 
-let SubmittedPropertyRequests = require("../models/SubmittedPropertyRequests.models");
+let SubmittedPropertyRequests = require("../models/SubmittedPropertyRequests.js");
 
 router.post("/create-propertyRequest", (req, res, next) => {
   SubmittedPropertyRequests.create(req.body, (error, data) => {

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Blogs = require("../models/Blogs");
+const Blogs = require("../models/Blogs.js");
 
 // Get all blogs
 router.get("/", async (req, res) => {

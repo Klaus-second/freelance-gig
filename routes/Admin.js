@@ -1,5 +1,5 @@
 const router = require("express").Router();
-let AdminDB = require("../models/Admin.models");
+let AdminDB = require("../models/Admin.js");
 
 router.route("/login").post(async (req, res) => {
   try {

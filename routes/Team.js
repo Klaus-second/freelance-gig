@@ -1,5 +1,5 @@
 const router = require("express").Router();
-let TeamDB = require("../models/Team.models");
+let TeamDB = require("../models/Team.js");
 
 router.route("/").get((req, res) => {
   TeamDB.find()

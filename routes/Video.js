@@ -1,5 +1,5 @@
 const router = require("express").Router();
-let VideoDB = require("../models/Video.models");
+let VideoDB = require("../models/Video.js");
 
 router.route("/").get((req, res) => {
   VideoDB.find()

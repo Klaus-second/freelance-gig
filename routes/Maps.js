@@ -1,5 +1,5 @@
 const router = require("express").Router();
-let MapsDB = require("../models/Maps.models");
+let MapsDB = require("../models/Maps.js");
 
 router.route("/").get((req, res) => {
   MapsDB.find()

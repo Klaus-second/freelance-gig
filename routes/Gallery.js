@@ -1,5 +1,5 @@
 const router = require("express").Router();
-let GalleryDB = require("../models/Gallery.models");
+let GalleryDB = require("../models/Gallery.js");
 
 router.route("/").get((req, res) => {
   GalleryDB.find()
