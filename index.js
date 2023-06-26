@@ -3,12 +3,13 @@ const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const port = process.env.PORT || 8000;
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.listen(8000, (err, res) => {
+app.listen(port, (err, res) => {
     if (err) {
         console.log(err);
     } else {
