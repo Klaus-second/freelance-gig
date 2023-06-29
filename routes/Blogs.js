@@ -13,9 +13,9 @@ router.get("/", async (req, res) => {
 });
 
 // Get one blog
-router.get("/:id", (req, res) => {
+router.get("/:id", async(req, res) => {
   const id = req.params.id;
-  const specBlog = Blogs.findById(id, function (err, blog) {
+  const specBlog = await Blogs.findById(id, function (err, blog) {
     if (!blog) {
       return res.json("Blog not found :(").end();
     }
