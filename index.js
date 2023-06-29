@@ -6,9 +6,14 @@ const dotenv = require("dotenv");
 const port = process.env.PORT || 8000;
 require("dotenv").config();
 
-app.use(cors({
-  origin: "*"
-}))
+app.use(
+  cors({
+    origin: "*",
+    credentials: true,
+    allowedHeaders: ["Authorization", "Content-Type"],
+  })
+);
+
 app.use(express.json());
 
 const DB_uri = "mongodb+srv://Klausss:9022173886@cluster0.weitk1g.mongodb.net/";
@@ -31,7 +36,7 @@ const BlogRouter = require("./routes/Blogs");
 
 app.get("/", (req, res) => {
   res.send("Hello from Express!");
-})
+});
 
 app.use("/Admin", AdminRouter);
 app.use("/AboutUs", AboutUsRouter);
@@ -45,9 +50,9 @@ app.use("/SubmittedPropertyRequests", SubmittedPropertyRequestsRouter);
 app.use("/blog", BlogRouter);
 
 app.listen(port, (err, res) => {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log("Server is running on port 8000");
-    }
-})
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("Server is running on port 8000");
+  }
+});
